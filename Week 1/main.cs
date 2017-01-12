@@ -40,76 +40,47 @@ namespace Week_1
         }
 
         // getName Function
-        // Recieves First Name & Last Name
+        // Recieves Structure
         // Returns First & Last together
-        private string getName(string fname, string lname)
+        private string getName(student mystudent)
         {
-            string output = fname + " " + lname;
+            string output = mystudent.firstname + " " + mystudent.lastname;
             return output;
         }
 
         // getMajor Function
-        // Recieves Major
+        // Recieves Structure
         // Returns Designated Output
-        private string getMajor(string iMajor)
+        private string getMajor(student mystudent)
         {
-            string output = "Major is: " + iMajor;
+            string output = "Major is: " + mystudent.major;
             return output;
-        }
-
-        // Custom Response to Lab Assignment
-        private void btnData_Click(object sender, EventArgs e)
-        {
-            // Declare nStudent of type student
-            student nStudent;
-
-            // Applies textbox values to struct members
-            nStudent.firstname = txtFirst.Text;
-            nStudent.lastname = txtLast.Text;
-            nStudent.suid = Convert.ToDouble(txtUID.Text);
-            nStudent.major = txtMajor.Text;
-
-            // MessageBox Output Variable
-            string mboxdata;
-
-            // Displays Name
-            mboxdata = getName(nStudent.firstname, nStudent.lastname);
-            MessageBox.Show(mboxdata);
-
-            // Displays Major
-            mboxdata = getMajor(nStudent.major);
-            MessageBox.Show(mboxdata);
         }
 
         private void btnName_Click(object sender, EventArgs e)
         {
             // Declare nStudent of type student
-            student nStudent;
+            student nStudent = new student();
 
             // Applies textbox values to struct members
             nStudent.firstname = txtFirst.Text;
             nStudent.lastname = txtLast.Text;
-            nStudent.suid = Convert.ToDouble(txtUID.Text);
-            nStudent.major = txtMajor.Text;
 
             // Displays Name
-            string mboxdata = getName(nStudent.firstname, nStudent.lastname);
+            string mboxdata = getName(nStudent);
             MessageBox.Show(mboxdata);
         }
 
         private void btnMajor_Click(object sender, EventArgs e)
         {
             // Declare nStudent of type student
-            student nStudent;
+            student nStudent = new student();
 
             // Applies textbox values to struct members
-            nStudent.firstname = txtFirst.Text;
-            nStudent.lastname = txtLast.Text;
-            nStudent.suid = Convert.ToDouble(txtUID.Text);
             nStudent.major = txtMajor.Text;
 
             // Displays Name
-            string mboxdata = getMajor(nStudent.major);
+            string mboxdata = getMajor(nStudent);
             MessageBox.Show(mboxdata);
         }
     }
